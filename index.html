@@ -33,27 +33,16 @@ header.nav{position:sticky;top:0;z-index:10;background:var(--noche);color:var(--
 section{padding:80px 0}
 section>.wrap>h2{font-size:clamp(1.9rem,5vw,2.8rem);margin-bottom:8px}
 .sub{max-width:60ch;margin-bottom:36px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px}
 .card{background:#fff;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px));transition:transform .2s}
 .card:hover{transform:translateY(-4px)}
-.thumb{position:relative;aspect-ratio:4/3;background:var(--noche);overflow:hidden}
+.thumb{position:relative;display:block;width:100%;padding:0;border:0;cursor:zoom-in;aspect-ratio:16/9;background:var(--noche);overflow:hidden}
 .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
 .thumb svg.gema{position:absolute;inset:0;margin:auto;width:46%;z-index:1}
 .card .info{padding:18px 20px 22px}
 .card h3{font-size:1.25rem}
 .meta{font-size:.9rem;color:#4b5470;margin-top:2px}
 .card p{margin-top:8px}
-#halloween{position:relative;background:#1a1030;color:#fbeedd;overflow:hidden}
-#halloween .wrap{position:relative;z-index:1}
-#halloween .sub{color:#e9d9f7}
-.juego{display:grid;grid-template-columns:1.5fr 1fr;gap:32px;align-items:start}
-.pantalla{position:relative;aspect-ratio:16/10;background:#0f0820;border:3px solid var(--calabaza);display:grid;place-items:center;text-align:center;padding:20px}
-.pantalla iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.pantalla svg{width:90px;margin:0 auto 10px;display:block}
-.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:16px 0 22px}
-.ficha dt{font-family:var(--head);color:var(--calabaza)}
-.ficha .btn{background:var(--calabaza)}
-.ficha .btn:hover{background:var(--mantequilla)}
 #sobre{background:#fff}
 #sobre p{max-width:62ch;margin-bottom:14px}
 .herr{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;list-style:none;padding:0}
@@ -61,8 +50,11 @@ section>.wrap>h2{font-size:clamp(1.9rem,5vw,2.8rem);margin-bottom:8px}
 #contacto{position:relative;background:var(--noche);color:#fff;overflow:hidden}
 #contacto .wrap{position:relative;z-index:1}
 .links{display:flex;gap:14px;flex-wrap:wrap}
+dialog{border:0;background:var(--noche);padding:12px;max-width:min(94vw,1100px);clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px))}
+dialog::backdrop{background:rgba(20,23,58,.85)}
+dialog img{display:block;max-width:100%;max-height:80vh;margin:0 auto;background:#fff}
+#cerrar{display:block;margin:0 0 10px auto;padding:6px 18px;background:var(--mantequilla);border:0;font-family:var(--head);font-weight:700;cursor:pointer}
 footer{background:#14173a;color:#b9c0e0;text-align:center;padding:20px;font-size:.9rem}
-@media(max-width:760px){.juego{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -72,7 +64,6 @@ footer{background:#14173a;color:#b9c0e0;text-align:center;padding:20px;font-size
     <strong>Ana</strong>
     <nav aria-label="Principal">
       <a href="#modelos">Modelos 3D</a>
-      <a href="#halloween">Halloween</a>
       <a href="#sobre">Sobre mí</a>
       <a href="#contacto">Contacto</a>
     </nav>
@@ -84,7 +75,7 @@ footer{background:#14173a;color:#b9c0e0;text-align:center;padding:20px;font-size
   <svg class="mosaico" id="m-hero" aria-hidden="true"></svg>
   <div class="wrap">
     <h1>Diseño juegos en low poly</h1>
-    <p>Soy Rohini. Soy diseñadora de videojuegos, modeladora y texturizadora en formación usando Blender, llevo mis assets a Unity para darles vida dentro de mis propios juegos. .</p>
+    <p>Soy Ana. Modelo mundos con pocos polígonos y los convierto en juegos jugables.</p>
     <a class="btn" href="#modelos">Ver mis modelos</a>
   </div>
 </div>
@@ -92,25 +83,8 @@ footer{background:#14173a;color:#b9c0e0;text-align:center;padding:20px;font-size
 <section id="modelos">
   <div class="wrap">
     <h2>Modelos 3D</h2>
-    <p class="sub">Todos están hechos en low poly. El low poly es mi punto de partida en el modelado 3D. Su enfoque en formas simples y limpias me ayuda a dominar los fundamentos (siluetas, proporciones y optimización) que servirán de base para técnicas más avanzadas. Es, además, un estilo versátil y visualmente atractivo, muy utilizado en videojuegos.</p>
+    <p class="sub">Todos están hechos en low poly. Pulsa una imagen para verla en grande.</p>
     <div class="grid" id="lista-modelos"></div>
-  </div>
-</section>
-
-<section id="halloween">
-  <svg class="mosaico" id="m-hall" aria-hidden="true"></svg>
-  <div class="wrap">
-    <h2>Videojuego de Halloween</h2>
-    <p class="sub">Mi proyecto de temporada. Puedes jugarlo aquí mismo cuando esté publicado.</p>
-    <div class="juego">
-      <div class="pantalla" id="pantalla-juego"></div>
-      <div class="ficha">
-        <h3 id="j-titulo"></h3>
-        <p id="j-desc"></p>
-        <dl id="j-datos"></dl>
-        <a class="btn" id="j-enlace" href="#" target="_blank" rel="noopener">Jugar en pantalla completa</a>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -129,32 +103,27 @@ footer{background:#14173a;color:#b9c0e0;text-align:center;padding:20px;font-size
   <svg class="mosaico" id="m-cont" aria-hidden="true"></svg>
   <div class="wrap">
     <h2>Contacto</h2>
-    <p class="sub">Escríbeme si quieres colaborar o ver más de mi trabajo.</p>
+    <p class="sub">Conectemos si quieres colaborar o ver más de mi trabajo.</p>
     <div class="links">
-      <a class="btn" href="mailto:tucorreo@ejemplo.com">Escribirme un correo</a>
-      <a class="btn" href="https://github.com/tu-usuario" target="_blank" rel="noopener">Ver mi GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/ana-maria-rodr%C3%ADguez-games/" target="_blank" rel="noopener">Mi LinkedIn</a>
+      <a class="btn" href="https://github.com/RohiniSakti" target="_blank" rel="noopener">Mi GitHub</a>
     </div>
   </div>
 </section>
 </main>
+
+<dialog id="visor"><button id="cerrar" aria-label="Cerrar">Cerrar</button><img id="visor-img" alt=""></dialog>
 
 <footer>Hecho con triángulos por Ana</footer>
 
 <script>
 /* ====== EDITA AQUÍ TU CONTENIDO ====== */
 const MODELOS = [
-  {nombre:"Modelo 1", herramienta:"Blender", triangulos:"800", desc:"Describe qué es y para qué lo hiciste.", img:""},
-  {nombre:"Modelo 2", herramienta:"Blender", triangulos:"1.200", desc:"Describe qué es y para qué lo hiciste.", img:""},
-  {nombre:"Modelo 3", herramienta:"Blender", triangulos:"950", desc:"Describe qué es y para qué lo hiciste.", img:""}
-  /* Para usar tu render: guarda la imagen en la carpeta "img" y escribe img:"img/mi-modelo.png" */
+  {nombre:"Sala de laboratorio", herramienta:"Blender", desc:"Escenario low poly con puerta blindada, carteles en las paredes, cajas y una consola de control.", img:"img/sala-laboratorio.webp"},
+  {nombre:"Personaje calabaza", herramienta:"Blender", desc:"Personaje de Halloween con cabeza de calabaza, chaqueta naranja y piernas largas y delgadas.", img:"img/personaje-calabaza.webp"},
+  {nombre:"Esqueleto de rata", herramienta:"Blender", desc:"Esqueleto de rata hecho con piezas sueltas: cráneo, costillas, columna y cola.", img:"img/esqueleto-rata.webp"}
+  /* Agrega triángulos:"800" a cualquier modelo si quieres mostrar ese dato */
 ];
-const JUEGO = {
-  titulo:"Título de tu juego",
-  desc:"Cuenta en dos frases de qué trata y cómo se juega.",
-  /* Pega la URL de tu juego publicado (itch.io o tu exportación web). Déjala vacía si aún no existe. */
-  url:"",
-  datos:[["Motor","Godot"],["Estado","En desarrollo"],["Controles","Teclado o mouse"]]
-};
 /* ====== FIN DE LA EDICIÓN ====== */
 
 /* Mosaico de triángulos (genera el efecto low poly) */
@@ -186,7 +155,6 @@ function mosaico(id, paleta, cols, filas, semilla){
 }
 const hex = h => [1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
 mosaico("m-hero",["#ff7a5c","#ffb37a","#2fa8a0","#1f2347"].map(hex),16,9,7);
-mosaico("m-hall",["#3a1b5c","#241044","#1a1030","#120a22"].map(hex),16,9,21);
 mosaico("m-cont",["#2fa8a0","#1f2347","#14173a"].map(hex),16,9,3);
 
 /* Gema low poly para las fichas sin imagen */
@@ -200,31 +168,24 @@ const lista = document.getElementById("lista-modelos");
 MODELOS.forEach((m,i)=>{
   const c = document.createElement("article");
   c.className = "card";
-  c.innerHTML = `<div class="thumb"><svg class="mosaico" id="mm${i}" aria-hidden="true"></svg>
-    ${m.img ? `<img src="${m.img}" alt="Modelo 3D: ${m.nombre}">` : GEMA}</div>
+  c.innerHTML = `<button class="thumb" data-i="${i}" aria-label="Ver ${m.nombre} en grande"><svg class="mosaico" id="mm${i}" aria-hidden="true"></svg>
+    ${m.img ? `<img src="${m.img}" alt="Modelo 3D: ${m.nombre}">` : GEMA}</button>
     <div class="info"><h3>${m.nombre}</h3>
-    <div class="meta">${m.herramienta}, ${m.triangulos} triángulos</div><p>${m.desc}</p></div>`;
+    <div class="meta">${m.herramienta}${m.triangulos ? ", "+m.triangulos+" triángulos" : ""}</div><p>${m.desc}</p></div>`;
   lista.appendChild(c);
   mosaico("mm"+i,["#2fa8a0","#1f2347","#14173a"].map(hex),6,5,11+i*5);
 });
 
-/* Sección del juego */
-document.getElementById("j-titulo").textContent = JUEGO.titulo;
-document.getElementById("j-desc").textContent = JUEGO.desc;
-document.getElementById("j-datos").innerHTML = JUEGO.datos.map(d=>`<dt>${d[0]}</dt><dd>${d[1]}</dd>`).join("");
-const pant = document.getElementById("pantalla-juego"), enlace = document.getElementById("j-enlace");
-if(JUEGO.url){
-  pant.innerHTML = `<iframe src="${JUEGO.url}" title="${JUEGO.titulo}" allowfullscreen loading="lazy"></iframe>`;
-  enlace.href = JUEGO.url;
-}else{
-  pant.innerHTML = `<div><svg viewBox="0 0 100 100" aria-hidden="true">
-    <polygon points="50,24 20,40 12,64 30,88 50,92" fill="#f28c28"/><polygon points="50,24 80,40 88,64 70,88 50,92" fill="#d9730f"/>
-    <polygon points="50,24 34,38 50,92 66,38" fill="#ffa84d"/><polygon points="46,24 54,24 56,10 44,10" fill="#4c8a3a"/>
-    <polygon points="34,52 44,52 39,62" fill="#1a1030"/><polygon points="56,52 66,52 61,62" fill="#1a1030"/>
-    <polygon points="36,72 64,72 50,80" fill="#1a1030"/></svg>
-    <p>Tu juego aparecerá aquí.<br>Pega su URL en <code>JUEGO.url</code>.</p></div>`;
-  enlace.style.display = "none";
-}
+
+/* Visor de imágenes */
+const visor = document.getElementById("visor"), vimg = document.getElementById("visor-img");
+lista.addEventListener("click", e=>{
+  const b = e.target.closest(".thumb"); if(!b) return;
+  const m = MODELOS[b.dataset.i]; if(!m.img) return;
+  vimg.src = m.img; vimg.alt = "Modelo 3D: "+m.nombre; visor.showModal();
+});
+document.getElementById("cerrar").onclick = () => visor.close();
+visor.addEventListener("click", e=>{ if(e.target===visor) visor.close(); });
 </script>
 </body>
 </html>
