@@ -3,89 +3,113 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ana | Game Designer · Diseño Narrativo · Programación</title>
+<title>Ana María Rodríguez | Game Designer · Diseño Narrativo · Unity/C#</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--noche:#181a40;--noche-osc:#10122e;--morado:#4b2d83;--azul:#1e3f7a;--faceta:#4f46e5;--menta:#b8c7ff;--coral:#ff7a5c;--mantequilla:#ffd166;--calabaza:#f28c28;--papel:#f4f5fb;--tinta:#1b2038;--gris:#4b5470;
+:root{--noche:#181a40;--noche-osc:#10122e;--morado:#4b2d83;--azul:#1e3f7a;--faceta:#4f46e5;--menta:#b8c7ff;--coral:#ff7a5c;--mantequilla:#ffd166;--calabaza:#f28c28;--papel:#f4f5fb;--tinta:#1b2038;--gris:#4b5470;--borde:#e2e6f5;
 --head:"Chakra Petch",Impact,sans-serif;--body:"DM Sans",system-ui,sans-serif}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 body{font-family:var(--body);background:var(--papel);color:var(--tinta);line-height:1.6}
-h1,h2,h3{font-family:var(--head);line-height:1.12}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.15}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--coral);outline-offset:3px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
 
 /* Navegación */
 header.nav{position:sticky;top:0;z-index:10;background:linear-gradient(90deg,#121436 0%,#231b54 60%,#192d5e 100%);color:var(--papel);box-shadow:0 2px 14px rgba(16,18,46,.32)}
 .nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px;gap:16px;flex-wrap:wrap}
-.nav strong{font-family:var(--head);font-size:1.25rem;letter-spacing:.02em}
-.nav nav{display:flex;gap:20px;flex-wrap:wrap}
-.nav a{text-decoration:none;font-weight:500;transition:color .2s}
+.nav strong{font-family:var(--head);font-size:1.18rem;letter-spacing:.02em}
+.nav nav{display:flex;gap:18px;flex-wrap:wrap}
+.nav a{text-decoration:none;font-weight:500;font-size:.96rem;transition:color .2s}
 .nav a:hover{color:var(--mantequilla)}
 
-/* Hero */
+/* Hero / Inicio */
 .hero{position:relative;overflow:hidden;color:#fff;display:flex;align-items:center;
 background:
   radial-gradient(circle at 18% 22%, rgba(124,77,255,.42), transparent 46%),
   radial-gradient(circle at 82% 28%, rgba(56,132,255,.38), transparent 48%),
   radial-gradient(circle at 60% 88%, rgba(157,78,221,.28), transparent 50%),
   linear-gradient(135deg, #0f1233 0%, #261b5c 38%, #3c267d 68%, #1a3b7a 100%)}
-.hero .wrap{position:relative;z-index:1;width:100%;padding-top:68px;padding-bottom:72px}
-.eyebrow{display:inline-block;margin-bottom:14px;padding:6px 14px;background:rgba(16,18,46,.62);border:1px solid rgba(184,199,255,.28);color:var(--menta);font-family:var(--head);font-size:.9rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
-.hero h1{font-size:clamp(2.4rem,6.5vw,4.5rem);max-width:16ch;text-shadow:0 4px 20px rgba(15,18,51,.45)}
-.hero p{max-width:52ch;margin-top:16px;font-size:1.15rem;color:#e9edff;text-shadow:0 1px 10px rgba(15,18,51,.35)}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-top:58px;padding-bottom:62px}
+.eyebrow{display:inline-block;margin-bottom:14px;padding:6px 14px;background:rgba(16,18,46,.62);border:1px solid rgba(184,199,255,.28);color:var(--menta);font-family:var(--head);font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.hero h1{font-size:clamp(2.2rem,5.8vw,4.1rem);max-width:17ch;text-shadow:0 4px 20px rgba(15,18,51,.45)}
+.hero .pitch{max-width:60ch;margin-top:14px;font-size:1.1rem;color:#e9edff;text-shadow:0 1px 10px rgba(15,18,51,.35)}
+.hero .pitch strong{color:var(--mantequilla)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.hero-social{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(184,199,255,.22);font-size:.92rem;color:#dce3ff}
+.hero-social a{text-decoration:none;font-weight:500;border-bottom:1px solid rgba(184,199,255,.45);padding-bottom:1px;transition:color .2s,border-color .2s}
+.hero-social a:hover{color:var(--mantequilla);border-color:var(--mantequilla)}
 
 /* Botones */
-.btn{display:inline-block;padding:13px 26px;background:var(--mantequilla);color:var(--tinta);font-family:var(--head);font-weight:700;text-decoration:none;clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);transition:background .2s,color .2s}
+.btn{display:inline-block;padding:12px 24px;background:var(--mantequilla);color:var(--tinta);font-family:var(--head);font-weight:700;text-decoration:none;clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);transition:background .2s,color .2s}
 .btn:hover{background:var(--coral);color:#fff}
 .btn-sec{background:rgba(16,18,46,.68);color:var(--papel)}
 .btn-sec:hover{background:var(--faceta);color:#fff}
-.btn-sm{padding:9px 16px;font-size:.9rem;clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%)}
+.btn-sm{padding:9px 16px;font-size:.88rem;clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%)}
 .btn-outline{background:var(--papel);color:var(--noche)}
 .btn-outline:hover{background:var(--noche);color:var(--menta)}
 
 /* Secciones */
-section{padding:80px 0}
-section>.wrap>h2{font-size:clamp(1.9rem,5vw,2.8rem);margin-bottom:8px}
-.sub{max-width:64ch;margin-bottom:36px;color:var(--gris)}
+section{padding:68px 0}
+section>.wrap>h2{font-size:clamp(1.85rem,4.5vw,2.6rem);margin-bottom:8px}
+.sub{max-width:68ch;margin-bottom:32px;color:var(--gris)}
 #contacto .sub{color:#e2e6f5}
 
 /* Grids y Tarjetas */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:24px}
 .card{background:#fff;display:flex;flex-direction:column;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px));transition:transform .2s}
 .card:hover{transform:translateY(-4px)}
 .thumb{position:relative;display:block;width:100%;padding:0;border:0;cursor:zoom-in;aspect-ratio:16/9;background:linear-gradient(135deg,#181a45 0%,#352470 52%,#1c3f7c 100%);overflow:hidden}
 .thumb.wip-bg{background:radial-gradient(circle at 25% 25%,rgba(139,92,246,.45),transparent 52%),radial-gradient(circle at 80% 75%,rgba(59,130,246,.4),transparent 52%),linear-gradient(135deg,#1b1748 0%,#492682 52%,#1d4080 100%)}
 .thumb.sin-visor{cursor:default}
 .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
-.thumb svg.gema{position:absolute;inset:0;margin:auto;width:36%;z-index:1;opacity:.92}
-.wip-label{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:2;padding:4px 12px;background:rgba(16,18,46,.82);color:var(--mantequilla);font-family:var(--head);font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
-.badge-corner{position:absolute;top:12px;left:12px;z-index:2;padding:4px 11px;background:var(--noche);color:var(--menta);font-family:var(--head);font-size:.76rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
+.thumb svg.gema{position:absolute;inset:0;margin:auto;width:34%;z-index:1;opacity:.92}
+.wip-label{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:2;padding:4px 12px;background:rgba(16,18,46,.82);color:var(--mantequilla);font-family:var(--head);font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
+.badge-corner{position:absolute;top:12px;left:12px;z-index:2;padding:4px 11px;background:var(--noche);color:var(--menta);font-family:var(--head);font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
 .badge-corner.wip{background:var(--calabaza);color:var(--noche-osc)}
 
 .card .info{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
 .card h3{font-size:1.3rem}
-.meta{font-size:.88rem;color:var(--gris);margin-top:4px}
-.rol{margin-top:10px;padding:7px 11px;background:#eef0fb;border-left:4px solid var(--faceta);font-size:.88rem;line-height:1.4;color:var(--noche)}
+.meta{font-size:.86rem;color:var(--gris);margin-top:4px}
+.rol{margin-top:10px;padding:7px 11px;background:#eef0fb;border-left:4px solid var(--faceta);font-size:.86rem;line-height:1.4;color:var(--noche)}
 .rol strong{font-family:var(--head);color:var(--noche)}
-.card p{margin-top:10px;font-size:.96rem}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;list-style:none;padding:0}
-.tags li{font-size:.76rem;font-weight:700;font-family:var(--head);padding:3px 9px;background:var(--papel);color:var(--noche);clip-path:polygon(5px 0,100% 0,calc(100% - 5px) 100%,0 100%)}
-.card-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:18px}
+.card p{margin-top:10px;font-size:.94rem}
+.ficha{margin-top:12px;padding-top:10px;border-top:1px solid var(--borde);font-size:.87rem;display:grid;gap:6px}
+.ficha div strong{color:var(--noche);font-family:var(--head);font-size:.85rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;list-style:none;padding:0}
+.tags li{font-size:.75rem;font-weight:700;font-family:var(--head);padding:3px 9px;background:var(--papel);color:var(--noche);clip-path:polygon(5px 0,100% 0,calc(100% - 5px) 100%,0 100%)}
+.updates{margin-top:14px;padding:10px 12px;background:#f8f9fe;border:1px solid var(--borde);font-size:.84rem}
+.updates h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--morado);margin-bottom:6px}
+.updates ul{padding-left:16px;display:grid;gap:4px;color:var(--gris)}
+.card-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:16px}
 
-/* Sobre mí */
+/* Acerca de mí */
 #sobre{background:#fff}
-#sobre p{max-width:66ch;margin-bottom:14px}
-.herr{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;list-style:none;padding:0}
-.herr li{background:var(--noche);color:var(--menta);padding:6px 16px;font-weight:500;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.sobre-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;align-items:start}
+#sobre p{margin-bottom:14px}
+.busco{padding:18px 20px;background:var(--papel);border-left:4px solid var(--morado)}
+.busco h3{font-size:1.1rem;color:var(--noche);margin-bottom:8px}
+.herr{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;list-style:none;padding:0}
+.herr li{background:var(--noche);color:var(--menta);padding:6px 15px;font-size:.9rem;font-weight:500;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
 .herr li.principal{background:linear-gradient(135deg,#4b2d83 0%,#3046b8 100%);color:#fff;font-weight:700}
 
+/* CV / Trayectoria */
+#cv{background:var(--papel)}
+.cv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.cv-box{background:#fff;padding:22px 24px;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px))}
+.cv-box h3{font-size:1.18rem;color:var(--morado);margin-bottom:14px}
+.cv-item{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--borde)}
+.cv-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:0}
+.cv-item strong{display:block;font-family:var(--head);font-size:1rem;color:var(--noche)}
+.cv-item .cv-meta{font-size:.84rem;color:var(--gris);margin:2px 0 6px}
+.cv-list{padding-left:18px;display:grid;gap:6px;font-size:.92rem}
+
 /* Modelos 3D (sección complementaria al final) */
-#modelos{background:var(--papel)}
+#modelos{background:#fff}
+#modelos .card{background:var(--papel)}
 
 /* Contacto */
 #contacto{position:relative;color:#fff;overflow:hidden;
@@ -98,7 +122,7 @@ background:
 
 /* Visor de imágenes */
 dialog{border:0;background:var(--noche);padding:12px;max-width:min(94vw,1100px);margin:auto;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px))}
-dialog::backdrop{background:rgba(20,23,58,.85)}
+dialog::backdrop{background:rgba(16,18,46,.85)}
 dialog img{display:block;max-width:100%;max-height:80vh;margin:0 auto;background:#fff}
 #cerrar{display:block;margin:0 0 10px auto;padding:6px 18px;background:var(--mantequilla);border:0;font-family:var(--head);font-weight:700;cursor:pointer}
 #cerrar:hover{background:var(--coral);color:#fff}
@@ -110,10 +134,11 @@ footer{background:var(--noche-osc);color:#b9c0e0;text-align:center;padding:20px;
 
 <header class="nav">
   <div class="wrap">
-    <strong>Ana</strong>
+    <strong>Ana María Rodríguez</strong>
     <nav aria-label="Principal">
       <a href="#juegos">Juegos</a>
-      <a href="#sobre">Sobre mí</a>
+      <a href="#sobre">Acerca de mí</a>
+      <a href="#cv">CV</a>
       <a href="#modelos">Modelos 3D</a>
       <a href="#contacto">Contacto</a>
     </nav>
@@ -123,46 +148,104 @@ footer{background:var(--noche-osc);color:#b9c0e0;text-align:center;padding:20px;
 <main>
 <div class="hero">
   <div class="wrap">
-    <span class="eyebrow">Game Designer · Diseño Narrativo · Programación</span>
+    <span class="eyebrow">Ana María Rodríguez · Game Designer · Diseño Narrativo · Unity &amp; C#</span>
     <h1>Diseño videojuegos desde su narrativa</h1>
-    <p>Soy Ana. Diseño videojuegos buscando que la historia, el mundo y las mecánicas de jugadores y enemigos hablen el mismo idioma, llevándolos a código en Unity y complementándolos con modelado 3D en low poly.</p>
+    <p class="pitch">Soy <strong>Ana María Rodríguez</strong>, Game Designer y desarrolladora junior en Unity/C#. Aporto a equipos indie y estudios la capacidad de diseñar videojuegos de forma integral —alineando historia, mecánicas de jugador y enemigos— y llevarlos a prototipos jugables en tiempos exigentes.</p>
     <div class="hero-actions">
-      <a class="btn" href="#juegos">Ver mis juegos</a>
-      <a class="btn btn-sec" href="#modelos">Ver modelos 3D</a>
+      <a class="btn" href="#juegos">Ver proyectos jugables</a>
+      <a class="btn btn-sec" href="#cv">Ver CV y logros</a>
+      <a class="btn btn-sec" href="#modelos">Modelos 3D</a>
+    </div>
+    <div class="hero-social" aria-label="Enlaces directos de contacto y perfiles">
+      <a href="mailto:rohinisaktideveloper@gmail.com">rohinisaktideveloper@gmail.com</a>
+      <a href="https://www.linkedin.com/in/ana-maria-rodr%C3%ADguez-games/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/RohiniSakti" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://rohinisakti.itch.io/" target="_blank" rel="noopener">itch.io</a>
     </div>
   </div>
 </div>
 
 <section id="juegos">
   <div class="wrap">
-    <h2>Juegos</h2>
-    <p class="sub">Proyectos creados en Game Jams y en mi bootcamp de desarrollo de videojuegos, donde lideré el diseño general, la narrativa principal y la programación del gameplay.</p>
+    <h2>Portafolio de Juegos</h2>
+    <p class="sub">Proyectos colaborativos y personales desarrollados durante el bootcamp y Game Jams. Cada ficha detalla mi contribución, el tema, las mecánicas, la tecnología usada, los retos resueltos y sus actualizaciones.</p>
     <div class="grid" id="lista-juegos"></div>
   </div>
 </section>
 
 <section id="sobre">
   <div class="wrap">
-    <h2>Sobre mí</h2>
-    <p>Soy Game Designer formada en el bootcamp de desarrollo de videojuegos de Generation Colombia. Disfruto diseñar videojuegos de forma integral, partiendo de la historia y la narrativa para que las mecánicas del jugador, los enemigos y el entorno sean coherentes con el mundo que cuentan, y llevando esas ideas a prototipos jugables en Unity y C#.</p>
-    <p>Además del diseño y la programación, complemento mi trabajo con diseño de niveles, audio/SFX y modelado 3D en Blender con estilo low poly, porque obliga a decidir exactamente qué detalles importan en pantalla.</p>
-    <ul class="herr">
-      <li class="principal">Game Design</li>
-      <li class="principal">Diseño narrativo</li>
-      <li class="principal">Programación de mecánicas</li>
-      <li class="principal">Unity &amp; C#</li>
-      <li>Diseño de niveles</li>
-      <li>Audio / SFX</li>
-      <li>Blender</li>
-      <li>Modelado low poly</li>
-    </ul>
+    <h2>Acerca de mí</h2>
+    <div class="sobre-grid">
+      <div>
+        <p>Soy <strong>Ana María Rodríguez</strong>, Game Designer y desarrolladora junior de videojuegos formada en el bootcamp de <strong>Generation Colombia</strong>. Mi pasión por esta industria nace de cómo los videojuegos permiten contar historias que no solo se observan, sino que se sienten a través de cada decisión y mecánica.</p>
+        <p>Mi recorrido comenzó explorando la creación de mundos y narrativa ambiental en 3D con Blender, y evolucionó hacia el diseño integral de videojuegos y la programación en <strong>Unity y C#</strong>. Participar en Game Jams de 48 horas y liderar el diseño de proyectos en equipo me enseñó a transformar conceptos narrativos en prototipos jugables, iterar con retroalimentación real y mantener coherencia entre el jugador, los enemigos y la historia.</p>
+      </div>
+      <div>
+        <div class="busco">
+          <h3>Qué estoy buscando</h3>
+          <p style="margin-bottom:0">Busco oportunidades como <strong>Junior Game Designer</strong>, <strong>Narrative Designer</strong> o <strong>Junior Unity Developer</strong> en estudios o equipos colaborativos donde pueda diseñar experiencias memorables, documentar sistemas claros y programar prototipos funcionales.</p>
+        </div>
+        <ul class="herr" aria-label="Habilidades principales">
+          <li class="principal">Game Design</li>
+          <li class="principal">Diseño narrativo</li>
+          <li class="principal">Unity &amp; C#</li>
+          <li class="principal">Prototipado de mecánicas</li>
+          <li>Diseño de niveles</li>
+          <li>Audio / SFX</li>
+          <li>Git &amp; GitHub</li>
+          <li>Blender (3D)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cv">
+  <div class="wrap">
+    <h2>CV y Trayectoria</h2>
+    <p class="sub">Resumen de mi formación, experiencia en proyectos de desarrollo de videojuegos y principales logros.</p>
+    <div class="cv-grid">
+      <div class="cv-box">
+        <h3>Formación y Bootcamp</h3>
+        <div class="cv-item">
+          <strong>Desarrolladora Junior de Videojuegos (Unity &amp; C#)</strong>
+          <div class="cv-meta">Generation Colombia · Cohorte 13 · 2026</div>
+          <p style="font-size:.92rem">Formación intensiva en diseño de videojuegos, programación en C# orientada a objetos, motores (Unity), diseño de niveles, documentación (GDD) y trabajo ágil en equipo.</p>
+        </div>
+        <div class="cv-item">
+          <strong>Formación autodidacta en Modelado 3D y Diseño de Niveles</strong>
+          <div class="cv-meta">Blender · Narrativa ambiental y diseño de puzles</div>
+          <p style="font-size:.92rem">Creación de escenarios, personajes y props en low poly enfocados en contar historias visuales dentro de proyectos propios como <em>Unearthed</em>.</p>
+        </div>
+      </div>
+
+      <div class="cv-box">
+        <h3>Logros en Proyectos y Game Jams</h3>
+        <ul class="cv-list">
+          <li><strong>Proyecto Final de Bootcamp (Vegetables Attack):</strong> Co-Project Manager, Main Game Designer y Main Programmer, coordinando la arquitectura de gameplay en Unity/C# y la coherencia narrativa.</li>
+          <li><strong>Game Jam 2 – Generation Colombia (El Viaje de Paco):</strong> Main Game Designer, Narrativa Principal, Diseño de Niveles y Sound Lead (SFX) en un equipo de 4 personas bajo el tema <em>Two Worlds</em>.</li>
+          <li><strong>Game Jam 1 – Generation Colombia (Never-Ending Monday):</strong> Main Game Designer, Narrativa y Programadora principal de mecánicas y lógica en C# en un sprint de 48 horas (<em>Atrapado en un bucle</em>).</li>
+        </ul>
+      </div>
+
+      <div class="cv-box">
+        <h3>Competencias y Herramientas</h3>
+        <ul class="cv-list">
+          <li><strong>Diseño de Videojuegos:</strong> Game Design, diseño narrativo, coherencia ludonarrativa, diseño de niveles, creación de GDD y balanceo de mecánicas.</li>
+          <li><strong>Programación y Motor:</strong> Unity (2D y 3D), C#, controladores de jugador, sistemas de tiempo, estados de juego y lógica de colisiones.</li>
+          <li><strong>Producción y Colaboración:</strong> Git, GitHub, Trello, Kanban, Figma, Scrum y comunicación en equipos multidisciplinarios.</li>
+          <li><strong>Arte y Audio Complementario:</strong> Blender (modelado 3D low poly e iluminación) y diseño/selección de SFX.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="modelos">
   <div class="wrap">
-    <h2>Modelos 3D</h2>
-    <p class="sub">Trabajo complementario en modelado low poly con Blender. Pulsa una imagen para verla en grande.</p>
+    <h2>Modelos 3D y Narrativa Ambiental</h2>
+    <p class="sub">Proyectos personales en Blender que demuestran mi criterio visual, diseño de niveles y narrativa ambiental. Pulsa una imagen para verla en grande.</p>
     <div class="grid" id="lista-modelos"></div>
   </div>
 </section>
@@ -170,11 +253,12 @@ footer{background:var(--noche-osc);color:#b9c0e0;text-align:center;padding:20px;
 <section id="contacto">
   <div class="wrap">
     <h2>Contacto</h2>
-    <p class="sub">Conectemos si quieres colaborar en un proyecto, hablar de diseño de videojuegos o ver más de mi trabajo.</p>
+    <p class="sub">¿Buscas una Game Designer o desarrolladora junior en Unity/C#? Escríbeme o revisa mis perfiles para ver más de mi trabajo.</p>
     <div class="links">
-      <a class="btn" href="https://www.linkedin.com/in/ana-maria-rodr%C3%ADguez-games/" target="_blank" rel="noopener">Mi LinkedIn</a>
-      <a class="btn" href="https://github.com/RohiniSakti" target="_blank" rel="noopener">Mi GitHub</a>
-      <a class="btn" href="https://rohinisakti.itch.io/" target="_blank" rel="noopener">Mi itch.io</a>
+      <a class="btn" href="mailto:rohinisaktideveloper@gmail.com">Enviar correo</a>
+      <a class="btn btn-sec" href="https://www.linkedin.com/in/ana-maria-rodr%C3%ADguez-games/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-sec" href="https://github.com/RohiniSakti" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-sec" href="https://rohinisakti.itch.io/" target="_blank" rel="noopener">itch.io</a>
     </div>
   </div>
 </section>
@@ -182,19 +266,27 @@ footer{background:var(--noche-osc);color:#b9c0e0;text-align:center;padding:20px;
 
 <dialog id="visor"><button id="cerrar" aria-label="Cerrar">Cerrar</button><img id="visor-img" alt=""></dialog>
 
-<footer>Hecho por Ana</footer>
+<footer>Hecho por Ana María Rodríguez</footer>
 
 <script>
 /* ====== EDITA AQUÍ TU CONTENIDO ====== */
 const JUEGOS = [
   {
     nombre: "Never-Ending Monday",
-    etiqueta: "Game Jam 1",
+    etiqueta: "Game Jam 1 · Completo",
     wip: false,
-    contexto: "Generation Colombia · Tema: Atrapado en un bucle",
+    contexto: "Proyecto colaborativo · Generation Colombia (48 h)",
     rol: "Main Game Designer · Programadora de mecánicas y lógica · Narrativa principal",
-    desc: "Endless runner 3D en una oficina atrapada en un lunes infinito. Esquiva obstáculos y compañeros, recoge relojes para ganar tiempo y entrega el informe antes de acumular tres memorandos.",
-    tags: ["Unity", "C#", "3D Low Poly", "Arcade", "Web"],
+    desc: "Endless runner 3D ambientado en una oficina atrapada en un lunes infinito, donde John debe entregar su informe antes de recibir tres memorandos.",
+    tema: "Atrapado en un bucle (sátira laboral).",
+    mecanicas: "Cambio de 3 carriles, salto, recolección de relojes (+3 s), evasión de compañeros/obstáculos y sistema de 3 memorandos.",
+    tecnologia: "Unity · C# (WebGL jugable en navegador).",
+    reto: "Programar desde cero en 48 h la lógica completa del jugador, temporizador dinámico, penalizaciones y ciclo de días manteniendo controles responsivos.",
+    actualizaciones: [
+      "Versión 1.0 publicada y jugable en navegador (WebGL) en itch.io.",
+      "Integración de tabla de puntuaciones (leaderboard) y guía visual de controles."
+    ],
+    tags: ["Unity", "C#", "3D", "Arcade", "WebGL"],
     img: "never-ending-monday.png",
     itch: "https://zyantg.itch.io/never-ending-monday",
     cta: "Jugar en itch.io",
@@ -202,12 +294,20 @@ const JUEGOS = [
   },
   {
     nombre: "El Viaje de Paco",
-    etiqueta: "Game Jam 2",
+    etiqueta: "Game Jam 2 · Completo",
     wip: false,
-    contexto: "Generation Colombia · Tema: Two Worlds",
+    contexto: "Proyecto colaborativo · Generation Colombia",
     rol: "Main Game Designer · Narrativa principal · Diseño de niveles · Sound Lead (SFX)",
-    desc: "Juego 2D de exploración y puzles en una noche bogotana. Alterna entre el mundo real y el «mundo viajado» para superar obstáculos, gestionar la ansiedad y conseguir los 3 boletos a la fiesta en la azotea.",
-    tags: ["Puzles", "2D", "Narrativa", "Web"],
+    desc: "Juego 2D de exploración y puzles en una noche bogotana donde Paco debe reunir 3 boletos para llegar a una fiesta clandestina en la azotea.",
+    tema: "Two Worlds (contraste entre la realidad cotidiana y el «mundo viajado»).",
+    mecanicas: "Exploración lateral, empuje de muebles para abrir caminos, cambio entre dos mundos (tecla Q) y gestión de ansiedad.",
+    tecnologia: "Unity · C# (WebGL jugable en navegador).",
+    reto: "Diseñar niveles y puzles que aprovecharan el cambio entre dos realidades de forma coherente con la narrativa y apoyados por el diseño sonoro (SFX).",
+    actualizaciones: [
+      "Build jugable en navegador publicada en itch.io con 2 mundos jugables.",
+      "Documentación de GDD y repositorio del equipo disponibles para consulta."
+    ],
+    tags: ["Unity", "C#", "2D", "Puzles", "Narrativa", "WebGL"],
     img: "el-viaje-de-paco.png",
     itch: "https://wooliesam.itch.io/el-viaje-de-paco",
     cta: "Jugar en itch.io",
@@ -215,23 +315,30 @@ const JUEGOS = [
   },
   {
     nombre: "Vegetables Attack",
-    etiqueta: "WIP · Bootcamp",
+    etiqueta: "Proyecto Final · En desarrollo",
     wip: true,
-    contexto: "Proyecto final de bootcamp · En desarrollo",
+    contexto: "Proyecto final de bootcamp · Generation Colombia",
     rol: "Main Game Designer · Main Programmer · Narrativa principal · Co-Project Manager",
-    desc: "Proyecto final del bootcamp de desarrollo de videojuegos actualmente en progreso. Encargada del diseño de mecánicas, la narrativa principal, la programación del gameplay y la co-gestión del proyecto.",
-    tags: ["Unity", "C#", "En desarrollo", "Descargable"],
+    desc: "Proyecto final del bootcamp actualmente en desarrollo activo, donde lidero el diseño integral del juego, su narrativa y la programación base.",
+    tema: "Combate y supervivencia en un mundo de vegetales.",
+    mecanicas: "Diseño y programación de mecánicas centrales del jugador y comportamiento de enemigos coherentes con la historia.",
+    tecnologia: "Unity · C# (Build descargable).",
+    reto: "Estructurar un código escalable en C# y coordinar el alcance entre diseño, arte y programación para entregar builds funcionales iterativas.",
+    actualizaciones: [
+      "Primera build jugable descargable (Build.zip) publicada en itch.io.",
+      "GDD y tablero de Trello activos con seguimiento de iteraciones del bootcamp."
+    ],
+    tags: ["Unity", "C#", "WIP", "Descargable"],
     img: "",
     itch: "https://ratziel81.itch.io/vegetables-attack",
-    cta: "Ver en itch.io"
+    cta: "Ver build en itch.io"
   }
 ];
 
 const MODELOS = [
-  {nombre:"Sala de laboratorio", herramienta:"Blender", desc:"Escenario low poly en el que se tuvieron en cuenta la iluminación, el diseño de nivel, el diseño de puzzle, el concepto y la historia. Los carteles de las paredes narran la experimentación en ratas, que hace parte de la identidad del videojuego y del personaje Siete.", img:"sala-laboratorio.webp"},
-  {nombre:"Personaje calabaza", herramienta:"Blender", desc:"Diseño de un personaje low poly para Halloween. Hará parte del escenario de Unearthed, un videojuego que estoy construyendo.", img:"personaje-calabaza.webp"},
-  {nombre:"Esqueleto de rata", herramienta:"Blender", desc:"Esqueleto de una rata que hace parte del escenario de un nivel en el que también participa Siete.", img:"esqueleto-rata.webp"}
-  /* Agrega triangulos:"800" a cualquier modelo si quieres mostrar ese dato */
+  {nombre:"Sala de laboratorio", herramienta:"Blender · Proyecto personal (Unearthed)", desc:"Escenario 3D diseñado pensando en iluminación, diseño de nivel, puzle y narrativa ambiental: los carteles en las paredes cuentan la historia de experimentación vinculada al personaje Siete.", img:"sala-laboratorio.webp"},
+  {nombre:"Personaje calabaza", herramienta:"Blender · Proyecto personal (Unearthed)", desc:"Diseño y modelado de un personaje low poly temático de Halloween creado para integrarse en un escenario de mi videojuego personal Unearthed.", img:"personaje-calabaza.webp"},
+  {nombre:"Esqueleto de rata", herramienta:"Blender · Proyecto personal (Unearthed)", desc:"Prop narrativo modelado en 3D para reforzar la ambientación e historia de un nivel protagonizado por el personaje Siete.", img:"esqueleto-rata.webp"}
 ];
 /* ====== FIN DE LA EDICIÓN ====== */
 
@@ -247,9 +354,10 @@ JUEGOS.forEach((g, i) => {
   const c = document.createElement("article");
   c.className = "card";
   const thumbInner = g.img
-    ? `<img src="${g.img}" alt="Portada de ${g.nombre}">`
+    ? `<img src="${g.img}" alt="Captura y portada de ${g.nombre}">`
     : `${GEMA}<span class="wip-label">Portada en proceso</span>`;
   const tagsHtml = (g.tags || []).map(t => `<li>${t}</li>`).join("");
+  const updatesHtml = (g.actualizaciones || []).map(u => `<li>${u}</li>`).join("");
   const githubBtn = g.github
     ? `<a class="btn btn-sm btn-outline" href="${g.github}" target="_blank" rel="noopener">GitHub</a>`
     : "";
@@ -263,7 +371,17 @@ JUEGOS.forEach((g, i) => {
       <div class="meta">${g.contexto}</div>
       <div class="rol"><strong>Mi rol:</strong> ${g.rol}</div>
       <p>${g.desc}</p>
+      <div class="ficha">
+        <div><strong>Tema:</strong> ${g.tema}</div>
+        <div><strong>Mecánicas:</strong> ${g.mecanicas}</div>
+        <div><strong>Tecnología:</strong> ${g.tecnologia}</div>
+        <div><strong>Reto resuelto:</strong> ${g.reto}</div>
+      </div>
       <ul class="tags">${tagsHtml}</ul>
+      <div class="updates">
+        <h4>Actualizaciones</h4>
+        <ul>${updatesHtml}</ul>
+      </div>
       <div class="card-actions">
         <a class="btn btn-sm" href="${g.itch}" target="_blank" rel="noopener">${g.cta || "Ver en itch.io"}</a>
         ${githubBtn}
