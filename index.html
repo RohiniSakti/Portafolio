@@ -3,58 +3,98 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ana | Portafolio de diseño de videojuegos</title>
+<title>Ana | Game Designer · Diseño Narrativo · Programación</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--noche:#1f2347;--faceta:#2fa8a0;--menta:#8fe3c8;--coral:#ff7a5c;--mantequilla:#ffd166;--calabaza:#f28c28;--papel:#f3f6f7;--tinta:#1b2038;
+:root{--noche:#1f2347;--noche-osc:#14173a;--faceta:#2fa8a0;--menta:#8fe3c8;--coral:#ff7a5c;--mantequilla:#ffd166;--calabaza:#f28c28;--papel:#f3f6f7;--tinta:#1b2038;--gris:#4b5470;
 --head:"Chakra Petch",Impact,sans-serif;--body:"DM Sans",system-ui,sans-serif}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 body{font-family:var(--body);background:var(--papel);color:var(--tinta);line-height:1.6}
-h1,h2,h3{font-family:var(--head);line-height:1.1}
+h1,h2,h3{font-family:var(--head);line-height:1.12}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--coral);outline-offset:3px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 .mosaico{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-header.nav{position:sticky;top:0;z-index:10;background:var(--noche);color:var(--papel)}
+
+/* Navegación */
+header.nav{position:sticky;top:0;z-index:10;background:var(--noche);color:var(--papel);box-shadow:0 2px 12px rgba(20,23,58,.25)}
 .nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px;gap:16px;flex-wrap:wrap}
-.nav strong{font-family:var(--head);font-size:1.2rem}
-.nav nav{display:flex;gap:18px}
-.nav a{text-decoration:none;font-weight:500}
+.nav strong{font-family:var(--head);font-size:1.25rem;letter-spacing:.02em}
+.nav nav{display:flex;gap:20px;flex-wrap:wrap}
+.nav a{text-decoration:none;font-weight:500;transition:color .2s}
 .nav a:hover{color:var(--mantequilla)}
-.hero{position:relative;overflow:hidden;color:#fff;min-height:78vh;display:flex;align-items:flex-end;background:var(--noche)}
-.hero .wrap{position:relative;z-index:1;padding-top:120px;padding-bottom:64px}
-.hero h1{font-size:clamp(2.6rem,9vw,5.6rem);max-width:12ch;text-shadow:0 3px 0 rgba(31,35,71,.35)}
-.hero p{max-width:46ch;margin-top:16px;font-size:1.15rem;text-shadow:0 1px 0 rgba(31,35,71,.4)}
-.btn{display:inline-block;margin-top:24px;padding:14px 28px;background:var(--mantequilla);color:var(--tinta);font-family:var(--head);font-weight:700;text-decoration:none;clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);transition:background .2s}
-.btn:hover{background:var(--coral)}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;color:#fff;min-height:76vh;display:flex;align-items:flex-end;background:var(--noche)}
+.hero .wrap{position:relative;z-index:1;padding-top:110px;padding-bottom:68px}
+.eyebrow{display:inline-block;margin-bottom:14px;padding:6px 14px;background:rgba(20,23,58,.72);color:var(--menta);font-family:var(--head);font-size:.9rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.hero h1{font-size:clamp(2.5rem,7.8vw,5.1rem);max-width:14ch;text-shadow:0 3px 0 rgba(31,35,71,.38)}
+.hero p{max-width:52ch;margin-top:16px;font-size:1.15rem;text-shadow:0 1px 0 rgba(31,35,71,.45)}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+
+/* Botones */
+.btn{display:inline-block;padding:13px 26px;background:var(--mantequilla);color:var(--tinta);font-family:var(--head);font-weight:700;text-decoration:none;clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);transition:background .2s,color .2s}
+.btn:hover{background:var(--coral);color:#fff}
+.btn-sec{background:rgba(20,23,58,.78);color:var(--papel)}
+.btn-sec:hover{background:var(--faceta);color:#fff}
+.btn-sm{padding:9px 16px;font-size:.9rem;clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%)}
+.btn-outline{background:var(--papel);color:var(--noche)}
+.btn-outline:hover{background:var(--noche);color:var(--menta)}
+
+/* Secciones */
 section{padding:80px 0}
 section>.wrap>h2{font-size:clamp(1.9rem,5vw,2.8rem);margin-bottom:8px}
-.sub{max-width:60ch;margin-bottom:36px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px}
-.card{background:#fff;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px));transition:transform .2s}
+.sub{max-width:64ch;margin-bottom:36px;color:var(--gris)}
+#contacto .sub{color:#e2e6f5}
+
+/* Grids y Tarjetas */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.card{background:#fff;display:flex;flex-direction:column;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px));transition:transform .2s}
 .card:hover{transform:translateY(-4px)}
 .thumb{position:relative;display:block;width:100%;padding:0;border:0;cursor:zoom-in;aspect-ratio:16/9;background:var(--noche);overflow:hidden}
+.thumb.sin-visor{cursor:default}
 .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
-.thumb svg.gema{position:absolute;inset:0;margin:auto;width:46%;z-index:1}
-.card .info{padding:18px 20px 22px}
-.card h3{font-size:1.25rem}
-.meta{font-size:.9rem;color:#4b5470;margin-top:2px}
-.card p{margin-top:8px}
+.thumb svg.gema{position:absolute;inset:0;margin:auto;width:38%;z-index:1}
+.wip-label{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:2;padding:4px 12px;background:rgba(20,23,58,.86);color:var(--mantequilla);font-family:var(--head);font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
+.badge-corner{position:absolute;top:12px;left:12px;z-index:2;padding:4px 11px;background:var(--noche);color:var(--menta);font-family:var(--head);font-size:.76rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
+.badge-corner.wip{background:var(--calabaza);color:var(--noche-osc)}
+
+.card .info{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.3rem}
+.meta{font-size:.88rem;color:var(--gris);margin-top:4px}
+.rol{margin-top:10px;padding:7px 11px;background:#eef5f5;border-left:4px solid var(--faceta);font-size:.88rem;line-height:1.4;color:var(--noche)}
+.rol strong{font-family:var(--head);color:var(--noche)}
+.card p{margin-top:10px;font-size:.96rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;list-style:none;padding:0}
+.tags li{font-size:.76rem;font-weight:700;font-family:var(--head);padding:3px 9px;background:var(--papel);color:var(--noche);clip-path:polygon(5px 0,100% 0,calc(100% - 5px) 100%,0 100%)}
+.card-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:18px}
+
+/* Sobre mí */
 #sobre{background:#fff}
-#sobre p{max-width:62ch;margin-bottom:14px}
-.herr{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;list-style:none;padding:0}
+#sobre p{max-width:66ch;margin-bottom:14px}
+.herr{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;list-style:none;padding:0}
 .herr li{background:var(--noche);color:var(--menta);padding:6px 16px;font-weight:500;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.herr li.principal{background:var(--faceta);color:#fff;font-weight:700}
+
+/* Modelos 3D (sección complementaria al final) */
+#modelos{background:var(--papel)}
+
+/* Contacto */
 #contacto{position:relative;background:var(--noche);color:#fff;overflow:hidden}
 #contacto .wrap{position:relative;z-index:1}
 .links{display:flex;gap:14px;flex-wrap:wrap}
-dialog{border:0;background:var(--noche);padding:12px;max-width:min(94vw,1100px);clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px))}
+
+/* Visor de imágenes */
+dialog{border:0;background:var(--noche);padding:12px;max-width:min(94vw,1100px);margin:auto;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px))}
 dialog::backdrop{background:rgba(20,23,58,.85)}
 dialog img{display:block;max-width:100%;max-height:80vh;margin:0 auto;background:#fff}
 #cerrar{display:block;margin:0 0 10px auto;padding:6px 18px;background:var(--mantequilla);border:0;font-family:var(--head);font-weight:700;cursor:pointer}
-footer{background:#14173a;color:#b9c0e0;text-align:center;padding:20px;font-size:.9rem}
+#cerrar:hover{background:var(--coral);color:#fff}
+
+footer{background:var(--noche-osc);color:#b9c0e0;text-align:center;padding:20px;font-size:.9rem}
 </style>
 </head>
 <body>
@@ -63,8 +103,9 @@ footer{background:#14173a;color:#b9c0e0;text-align:center;padding:20px;font-size
   <div class="wrap">
     <strong>Ana</strong>
     <nav aria-label="Principal">
-      <a href="#modelos">Modelos 3D</a>
+      <a href="#juegos">Juegos</a>
       <a href="#sobre">Sobre mí</a>
+      <a href="#modelos">Modelos 3D</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </div>
@@ -74,27 +115,47 @@ footer{background:#14173a;color:#b9c0e0;text-align:center;padding:20px;font-size
 <div class="hero">
   <svg class="mosaico" id="m-hero" aria-hidden="true"></svg>
   <div class="wrap">
-    <h1>Diseño juegos en low poly</h1>
-    <p>Soy Ana. Modelo mundos con pocos polígonos y los convierto en juegos jugables.</p>
-    <a class="btn" href="#modelos">Ver mis modelos</a>
+    <span class="eyebrow">Game Designer · Diseño Narrativo · Programación</span>
+    <h1>Diseño videojuegos desde su narrativa</h1>
+    <p>Soy Ana. Diseño videojuegos buscando que la historia, el mundo y las mecánicas de jugadores y enemigos hablen el mismo idioma, llevándolos a código en Unity y complementándolos con modelado 3D en low poly.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#juegos">Ver mis juegos</a>
+      <a class="btn btn-sec" href="#modelos">Ver modelos 3D</a>
+    </div>
   </div>
 </div>
 
-<section id="modelos">
+<section id="juegos">
   <div class="wrap">
-    <h2>Modelos 3D</h2>
-    <p class="sub">Todos están hechos en low poly. Pulsa una imagen para verla en grande.</p>
-    <div class="grid" id="lista-modelos"></div>
+    <h2>Juegos</h2>
+    <p class="sub">Proyectos creados en Game Jams y en mi bootcamp de desarrollo de videojuegos, donde lideré el diseño general, la narrativa principal y la programación del gameplay.</p>
+    <div class="grid" id="lista-juegos"></div>
   </div>
 </section>
 
 <section id="sobre">
   <div class="wrap">
     <h2>Sobre mí</h2>
-    <p>Estoy aprendiendo desarrollo de videojuegos y uso este portafolio para mostrar lo que voy construyendo. Me gusta el low poly porque obliga a decidir qué detalles importan.</p>
+    <p>Soy Game Designer formada en el bootcamp de desarrollo de videojuegos de Generation Colombia. Disfruto diseñar videojuegos de forma integral, partiendo de la historia y la narrativa para que las mecánicas del jugador, los enemigos y el entorno sean coherentes con el mundo que cuentan, y llevando esas ideas a prototipos jugables en Unity y C#.</p>
+    <p>Además del diseño y la programación, complemento mi trabajo con diseño de niveles, audio/SFX y modelado 3D en Blender con estilo low poly, porque obliga a decidir exactamente qué detalles importan en pantalla.</p>
     <ul class="herr">
-      <li>Blender</li><li>Modelado low poly</li><li>Diseño de niveles</li>
+      <li class="principal">Game Design</li>
+      <li class="principal">Diseño narrativo</li>
+      <li class="principal">Programación de mecánicas</li>
+      <li class="principal">Unity &amp; C#</li>
+      <li>Diseño de niveles</li>
+      <li>Audio / SFX</li>
+      <li>Blender</li>
+      <li>Modelado low poly</li>
     </ul>
+  </div>
+</section>
+
+<section id="modelos">
+  <div class="wrap">
+    <h2>Modelos 3D</h2>
+    <p class="sub">Trabajo complementario en modelado low poly con Blender. Pulsa una imagen para verla en grande.</p>
+    <div class="grid" id="lista-modelos"></div>
   </div>
 </section>
 
@@ -102,10 +163,11 @@ footer{background:#14173a;color:#b9c0e0;text-align:center;padding:20px;font-size
   <svg class="mosaico" id="m-cont" aria-hidden="true"></svg>
   <div class="wrap">
     <h2>Contacto</h2>
-    <p class="sub">Conectemos si quieres colaborar o ver más de mi trabajo.</p>
+    <p class="sub">Conectemos si quieres colaborar en un proyecto, hablar de diseño de videojuegos o ver más de mi trabajo.</p>
     <div class="links">
       <a class="btn" href="https://www.linkedin.com/in/ana-maria-rodr%C3%ADguez-games/" target="_blank" rel="noopener">Mi LinkedIn</a>
       <a class="btn" href="https://github.com/RohiniSakti" target="_blank" rel="noopener">Mi GitHub</a>
+      <a class="btn" href="https://rohinisakti.itch.io/" target="_blank" rel="noopener">Mi itch.io</a>
     </div>
   </div>
 </section>
@@ -117,11 +179,52 @@ footer{background:#14173a;color:#b9c0e0;text-align:center;padding:20px;font-size
 
 <script>
 /* ====== EDITA AQUÍ TU CONTENIDO ====== */
+const JUEGOS = [
+  {
+    nombre: "Never-Ending Monday",
+    etiqueta: "Game Jam 1",
+    wip: false,
+    contexto: "Generation Colombia · Tema: Atrapado en un bucle",
+    rol: "Main Game Designer · Programadora de mecánicas y lógica · Narrativa principal",
+    desc: "Endless runner 3D en una oficina atrapada en un lunes infinito. Esquiva obstáculos y compañeros, recoge relojes para ganar tiempo y entrega el informe antes de acumular tres memorandos.",
+    tags: ["Unity", "C#", "3D Low Poly", "Arcade", "Web"],
+    img: "never-ending-monday.png",
+    itch: "https://zyantg.itch.io/never-ending-monday",
+    cta: "Jugar en itch.io",
+    github: "https://github.com/DannieLudens/Generation_GameJam_Project_1"
+  },
+  {
+    nombre: "El Viaje de Paco",
+    etiqueta: "Game Jam 2",
+    wip: false,
+    contexto: "Generation Colombia · Tema: Two Worlds",
+    rol: "Main Game Designer · Narrativa principal · Diseño de niveles · Sound Lead (SFX)",
+    desc: "Juego 2D de exploración y puzles en una noche bogotana. Alterna entre el mundo real y el «mundo viajado» para superar obstáculos, gestionar la ansiedad y conseguir los 3 boletos a la fiesta en la azotea.",
+    tags: ["Puzles", "2D", "Narrativa", "Web"],
+    img: "el-viaje-de-paco.png",
+    itch: "https://wooliesam.itch.io/el-viaje-de-paco",
+    cta: "Jugar en itch.io",
+    github: "https://github.com/alospinar/gamejam2group2"
+  },
+  {
+    nombre: "Vegetables Attack",
+    etiqueta: "WIP · Bootcamp",
+    wip: true,
+    contexto: "Proyecto final de bootcamp · En desarrollo",
+    rol: "Main Game Designer · Main Programmer · Narrativa principal · Co-Project Manager",
+    desc: "Proyecto final del bootcamp de desarrollo de videojuegos actualmente en progreso. Encargada del diseño de mecánicas, la narrativa principal, la programación del gameplay y la co-gestión del proyecto.",
+    tags: ["Unity", "C#", "En desarrollo", "Descargable"],
+    img: "",
+    itch: "https://ratziel81.itch.io/vegetables-attack",
+    cta: "Ver en itch.io"
+  }
+];
+
 const MODELOS = [
   {nombre:"Sala de laboratorio", herramienta:"Blender", desc:"Escenario low poly en el que se tuvieron en cuenta la iluminación, el diseño de nivel, el diseño de puzzle, el concepto y la historia. Los carteles de las paredes narran la experimentación en ratas, que hace parte de la identidad del videojuego y del personaje Siete.", img:"sala-laboratorio.webp"},
   {nombre:"Personaje calabaza", herramienta:"Blender", desc:"Diseño de un personaje low poly para Halloween. Hará parte del escenario de Unearthed, un videojuego que estoy construyendo.", img:"personaje-calabaza.webp"},
   {nombre:"Esqueleto de rata", herramienta:"Blender", desc:"Esqueleto de una rata que hace parte del escenario de un nivel en el que también participa Siete.", img:"esqueleto-rata.webp"}
-  /* Agrega triángulos:"800" a cualquier modelo si quieres mostrar ese dato */
+  /* Agrega triangulos:"800" a cualquier modelo si quieres mostrar ese dato */
 ];
 /* ====== FIN DE LA EDICIÓN ====== */
 
@@ -156,35 +259,82 @@ const hex = h => [1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
 mosaico("m-hero",["#ff7a5c","#ffb37a","#2fa8a0","#1f2347"].map(hex),16,9,7);
 mosaico("m-cont",["#2fa8a0","#1f2347","#14173a"].map(hex),16,9,3);
 
-/* Gema low poly para las fichas sin imagen */
+/* Gema low poly para fichas sin imagen */
 const GEMA = `<svg class="gema" viewBox="0 0 100 100" aria-hidden="true">
 <polygon points="50,6 86,34 50,94" fill="#8fe3c8"/><polygon points="50,6 14,34 50,94" fill="#2fa8a0"/>
 <polygon points="14,34 50,34 50,94" fill="#25857f"/><polygon points="86,34 50,34 50,6" fill="#c9f5e6"/>
 <polygon points="14,34 50,34 50,6" fill="#6fd1b6"/></svg>`;
 
-/* Fichas de modelos */
-const lista = document.getElementById("lista-modelos");
-MODELOS.forEach((m,i)=>{
+/* Fichas de juegos */
+const listaJuegos = document.getElementById("lista-juegos");
+JUEGOS.forEach((g, i) => {
   const c = document.createElement("article");
   c.className = "card";
-  c.innerHTML = `<button class="thumb" data-i="${i}" aria-label="Ver ${m.nombre} en grande"><svg class="mosaico" id="mm${i}" aria-hidden="true"></svg>
-    ${m.img ? `<img src="${m.img}" alt="Modelo 3D: ${m.nombre}">` : GEMA}</button>
-    <div class="info"><h3>${m.nombre}</h3>
-    <div class="meta">${m.herramienta}${m.triangulos ? ", "+m.triangulos+" triángulos" : ""}</div><p>${m.desc}</p></div>`;
-  lista.appendChild(c);
-  mosaico("mm"+i,["#2fa8a0","#1f2347","#14173a"].map(hex),6,5,11+i*5);
+  const thumbInner = g.img
+    ? `<img src="${g.img}" alt="Portada de ${g.nombre}">`
+    : `${GEMA}<span class="wip-label">Portada en proceso</span>`;
+  const tagsHtml = (g.tags || []).map(t => `<li>${t}</li>`).join("");
+  const githubBtn = g.github
+    ? `<a class="btn btn-sm btn-outline" href="${g.github}" target="_blank" rel="noopener">GitHub</a>`
+    : "";
+  c.innerHTML = `
+    <button class="thumb${g.img ? "" : " sin-visor"}" data-tipo="juego" data-i="${i}" aria-label="${g.img ? `Ver portada de ${g.nombre} en grande` : `${g.nombre} en desarrollo`}">
+      <svg class="mosaico" id="mj${i}" aria-hidden="true"></svg>
+      <span class="badge-corner${g.wip ? " wip" : ""}">${g.etiqueta}</span>
+      ${thumbInner}
+    </button>
+    <div class="info">
+      <h3>${g.nombre}</h3>
+      <div class="meta">${g.contexto}</div>
+      <div class="rol"><strong>Mi rol:</strong> ${g.rol}</div>
+      <p>${g.desc}</p>
+      <ul class="tags">${tagsHtml}</ul>
+      <div class="card-actions">
+        <a class="btn btn-sm" href="${g.itch}" target="_blank" rel="noopener">${g.cta || "Ver en itch.io"}</a>
+        ${githubBtn}
+      </div>
+    </div>`;
+  listaJuegos.appendChild(c);
+  const paleta = g.wip
+    ? ["#f28c28","#ff7a5c","#2fa8a0","#1f2347"]
+    : ["#2fa8a0","#1f2347","#14173a"];
+  mosaico("mj"+i, paleta.map(hex), 6, 5, 23+i*7);
 });
 
+/* Fichas de modelos 3D */
+const listaModelos = document.getElementById("lista-modelos");
+MODELOS.forEach((m, i) => {
+  const c = document.createElement("article");
+  c.className = "card";
+  c.innerHTML = `
+    <button class="thumb" data-tipo="modelo" data-i="${i}" aria-label="Ver ${m.nombre} en grande">
+      <svg class="mosaico" id="mm${i}" aria-hidden="true"></svg>
+      ${m.img ? `<img src="${m.img}" alt="Modelo 3D: ${m.nombre}">` : GEMA}
+    </button>
+    <div class="info">
+      <h3>${m.nombre}</h3>
+      <div class="meta">${m.herramienta}${m.triangulos ? ", "+m.triangulos+" triángulos" : ""}</div>
+      <p>${m.desc}</p>
+    </div>`;
+  listaModelos.appendChild(c);
+  mosaico("mm"+i, ["#2fa8a0","#1f2347","#14173a"].map(hex), 6, 5, 11+i*5);
+});
 
 /* Visor de imágenes */
 const visor = document.getElementById("visor"), vimg = document.getElementById("visor-img");
-lista.addEventListener("click", e=>{
-  const b = e.target.closest(".thumb"); if(!b) return;
-  const m = MODELOS[b.dataset.i]; if(!m.img) return;
-  vimg.src = m.img; vimg.alt = "Modelo 3D: "+m.nombre; visor.showModal();
-});
+function abrirVisor(e) {
+  const b = e.target.closest(".thumb");
+  if (!b) return;
+  const item = b.dataset.tipo === "juego" ? JUEGOS[b.dataset.i] : MODELOS[b.dataset.i];
+  if (!item || !item.img) return;
+  vimg.src = item.img;
+  vimg.alt = (b.dataset.tipo === "juego" ? "Portada de " : "Modelo 3D: ") + item.nombre;
+  visor.showModal();
+}
+listaJuegos.addEventListener("click", abrirVisor);
+listaModelos.addEventListener("click", abrirVisor);
 document.getElementById("cerrar").onclick = () => visor.close();
-visor.addEventListener("click", e=>{ if(e.target===visor) visor.close(); });
+visor.addEventListener("click", e => { if (e.target === visor) visor.close(); });
 </script>
 </body>
 </html>
