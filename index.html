@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--noche:#1f2347;--noche-osc:#14173a;--faceta:#2fa8a0;--menta:#8fe3c8;--coral:#ff7a5c;--mantequilla:#ffd166;--calabaza:#f28c28;--papel:#f3f6f7;--tinta:#1b2038;--gris:#4b5470;
+:root{--noche:#181a40;--noche-osc:#10122e;--morado:#4b2d83;--azul:#1e3f7a;--faceta:#4f46e5;--menta:#b8c7ff;--coral:#ff7a5c;--mantequilla:#ffd166;--calabaza:#f28c28;--papel:#f4f5fb;--tinta:#1b2038;--gris:#4b5470;
 --head:"Chakra Petch",Impact,sans-serif;--body:"DM Sans",system-ui,sans-serif}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
@@ -17,10 +17,9 @@ h1,h2,h3{font-family:var(--head);line-height:1.12}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--coral);outline-offset:3px}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-.mosaico{position:absolute;inset:0;width:100%;height:100%;z-index:0}
 
 /* Navegación */
-header.nav{position:sticky;top:0;z-index:10;background:var(--noche);color:var(--papel);box-shadow:0 2px 12px rgba(20,23,58,.25)}
+header.nav{position:sticky;top:0;z-index:10;background:linear-gradient(90deg,#121436 0%,#231b54 60%,#192d5e 100%);color:var(--papel);box-shadow:0 2px 14px rgba(16,18,46,.32)}
 .nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px;gap:16px;flex-wrap:wrap}
 .nav strong{font-family:var(--head);font-size:1.25rem;letter-spacing:.02em}
 .nav nav{display:flex;gap:20px;flex-wrap:wrap}
@@ -28,17 +27,22 @@ header.nav{position:sticky;top:0;z-index:10;background:var(--noche);color:var(--
 .nav a:hover{color:var(--mantequilla)}
 
 /* Hero */
-.hero{position:relative;overflow:hidden;color:#fff;min-height:76vh;display:flex;align-items:flex-end;background:var(--noche)}
+.hero{position:relative;overflow:hidden;color:#fff;min-height:76vh;display:flex;align-items:flex-end;
+background:
+  radial-gradient(circle at 18% 22%, rgba(124,77,255,.42), transparent 46%),
+  radial-gradient(circle at 82% 28%, rgba(56,132,255,.38), transparent 48%),
+  radial-gradient(circle at 60% 88%, rgba(157,78,221,.28), transparent 50%),
+  linear-gradient(135deg, #0f1233 0%, #261b5c 38%, #3c267d 68%, #1a3b7a 100%)}
 .hero .wrap{position:relative;z-index:1;padding-top:110px;padding-bottom:68px}
-.eyebrow{display:inline-block;margin-bottom:14px;padding:6px 14px;background:rgba(20,23,58,.72);color:var(--menta);font-family:var(--head);font-size:.9rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
-.hero h1{font-size:clamp(2.5rem,7.8vw,5.1rem);max-width:14ch;text-shadow:0 3px 0 rgba(31,35,71,.38)}
-.hero p{max-width:52ch;margin-top:16px;font-size:1.15rem;text-shadow:0 1px 0 rgba(31,35,71,.45)}
+.eyebrow{display:inline-block;margin-bottom:14px;padding:6px 14px;background:rgba(16,18,46,.62);border:1px solid rgba(184,199,255,.28);color:var(--menta);font-family:var(--head);font-size:.9rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.hero h1{font-size:clamp(2.5rem,7.8vw,5.1rem);max-width:14ch;text-shadow:0 4px 20px rgba(15,18,51,.45)}
+.hero p{max-width:52ch;margin-top:16px;font-size:1.15rem;color:#e9edff;text-shadow:0 1px 10px rgba(15,18,51,.35)}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
 
 /* Botones */
 .btn{display:inline-block;padding:13px 26px;background:var(--mantequilla);color:var(--tinta);font-family:var(--head);font-weight:700;text-decoration:none;clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);transition:background .2s,color .2s}
 .btn:hover{background:var(--coral);color:#fff}
-.btn-sec{background:rgba(20,23,58,.78);color:var(--papel)}
+.btn-sec{background:rgba(16,18,46,.68);color:var(--papel)}
 .btn-sec:hover{background:var(--faceta);color:#fff}
 .btn-sm{padding:9px 16px;font-size:.9rem;clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%)}
 .btn-outline{background:var(--papel);color:var(--noche)}
@@ -54,18 +58,19 @@ section>.wrap>h2{font-size:clamp(1.9rem,5vw,2.8rem);margin-bottom:8px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
 .card{background:#fff;display:flex;flex-direction:column;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px));transition:transform .2s}
 .card:hover{transform:translateY(-4px)}
-.thumb{position:relative;display:block;width:100%;padding:0;border:0;cursor:zoom-in;aspect-ratio:16/9;background:var(--noche);overflow:hidden}
+.thumb{position:relative;display:block;width:100%;padding:0;border:0;cursor:zoom-in;aspect-ratio:16/9;background:linear-gradient(135deg,#181a45 0%,#352470 52%,#1c3f7c 100%);overflow:hidden}
+.thumb.wip-bg{background:radial-gradient(circle at 25% 25%,rgba(139,92,246,.45),transparent 52%),radial-gradient(circle at 80% 75%,rgba(59,130,246,.4),transparent 52%),linear-gradient(135deg,#1b1748 0%,#492682 52%,#1d4080 100%)}
 .thumb.sin-visor{cursor:default}
 .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
-.thumb svg.gema{position:absolute;inset:0;margin:auto;width:38%;z-index:1}
-.wip-label{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:2;padding:4px 12px;background:rgba(20,23,58,.86);color:var(--mantequilla);font-family:var(--head);font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
+.thumb svg.gema{position:absolute;inset:0;margin:auto;width:36%;z-index:1;opacity:.92}
+.wip-label{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:2;padding:4px 12px;background:rgba(16,18,46,.82);color:var(--mantequilla);font-family:var(--head);font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
 .badge-corner{position:absolute;top:12px;left:12px;z-index:2;padding:4px 11px;background:var(--noche);color:var(--menta);font-family:var(--head);font-size:.76rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
 .badge-corner.wip{background:var(--calabaza);color:var(--noche-osc)}
 
 .card .info{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
 .card h3{font-size:1.3rem}
 .meta{font-size:.88rem;color:var(--gris);margin-top:4px}
-.rol{margin-top:10px;padding:7px 11px;background:#eef5f5;border-left:4px solid var(--faceta);font-size:.88rem;line-height:1.4;color:var(--noche)}
+.rol{margin-top:10px;padding:7px 11px;background:#eef0fb;border-left:4px solid var(--faceta);font-size:.88rem;line-height:1.4;color:var(--noche)}
 .rol strong{font-family:var(--head);color:var(--noche)}
 .card p{margin-top:10px;font-size:.96rem}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;list-style:none;padding:0}
@@ -77,13 +82,17 @@ section>.wrap>h2{font-size:clamp(1.9rem,5vw,2.8rem);margin-bottom:8px}
 #sobre p{max-width:66ch;margin-bottom:14px}
 .herr{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;list-style:none;padding:0}
 .herr li{background:var(--noche);color:var(--menta);padding:6px 16px;font-weight:500;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
-.herr li.principal{background:var(--faceta);color:#fff;font-weight:700}
+.herr li.principal{background:linear-gradient(135deg,#4b2d83 0%,#3046b8 100%);color:#fff;font-weight:700}
 
 /* Modelos 3D (sección complementaria al final) */
 #modelos{background:var(--papel)}
 
 /* Contacto */
-#contacto{position:relative;background:var(--noche);color:#fff;overflow:hidden}
+#contacto{position:relative;color:#fff;overflow:hidden;
+background:
+  radial-gradient(circle at 82% 20%, rgba(124,77,255,.35), transparent 48%),
+  radial-gradient(circle at 18% 85%, rgba(56,132,255,.32), transparent 50%),
+  linear-gradient(135deg, #10122e 0%, #261b5c 50%, #193670 100%)}
 #contacto .wrap{position:relative;z-index:1}
 .links{display:flex;gap:14px;flex-wrap:wrap}
 
@@ -113,7 +122,6 @@ footer{background:var(--noche-osc);color:#b9c0e0;text-align:center;padding:20px;
 
 <main>
 <div class="hero">
-  <svg class="mosaico" id="m-hero" aria-hidden="true"></svg>
   <div class="wrap">
     <span class="eyebrow">Game Designer · Diseño Narrativo · Programación</span>
     <h1>Diseño videojuegos desde su narrativa</h1>
@@ -160,7 +168,6 @@ footer{background:var(--noche-osc);color:#b9c0e0;text-align:center;padding:20px;
 </section>
 
 <section id="contacto">
-  <svg class="mosaico" id="m-cont" aria-hidden="true"></svg>
   <div class="wrap">
     <h2>Contacto</h2>
     <p class="sub">Conectemos si quieres colaborar en un proyecto, hablar de diseño de videojuegos o ver más de mi trabajo.</p>
@@ -175,7 +182,7 @@ footer{background:var(--noche-osc);color:#b9c0e0;text-align:center;padding:20px;
 
 <dialog id="visor"><button id="cerrar" aria-label="Cerrar">Cerrar</button><img id="visor-img" alt=""></dialog>
 
-<footer>Hecho con triángulos por Ana</footer>
+<footer>Hecho por Ana</footer>
 
 <script>
 /* ====== EDITA AQUÍ TU CONTENIDO ====== */
@@ -228,42 +235,11 @@ const MODELOS = [
 ];
 /* ====== FIN DE LA EDICIÓN ====== */
 
-/* Mosaico de triángulos (genera el efecto low poly) */
-function mosaico(id, paleta, cols, filas, semilla){
-  const svg = document.getElementById(id), W = 1000, H = 600;
-  let s = semilla;
-  const rnd = () => (s = (s*16807) % 2147483647) / 2147483647;
-  const cw = W/cols, ch = H/filas, p = [];
-  for(let j=0;j<=filas;j++){p[j]=[];for(let i=0;i<=cols;i++){
-    const borde = i===0||j===0||i===cols||j===filas;
-    p[j][i]=[i*cw+(borde?0:(rnd()-.5)*cw*.8), j*ch+(borde?0:(rnd()-.5)*ch*.8)];}}
-  const mezcla = t => {
-    const k = Math.min(Math.max(t,0),.999)*(paleta.length-1), a = Math.floor(k), f = k-a;
-    const x = paleta[a], y = paleta[a+1];
-    return x.map((v,n)=>Math.round(v+(y[n]-v)*f));
-  };
-  let out = "";
-  for(let j=0;j<filas;j++)for(let i=0;i<cols;i++){
-    const a=p[j][i], b=p[j][i+1], c=p[j+1][i], d=p[j+1][i+1];
-    [[a,b,c],[b,d,c]].forEach(t=>{
-      const t0 = ((t[0][1]+t[1][1]+t[2][1])/3)/H*.7 + rnd()*.3;
-      const col = mezcla(t0);
-      out += `<polygon points="${t.map(q=>q.map(v=>v.toFixed(0)).join(",")).join(" ")}" fill="rgb(${col})" stroke="rgb(${col})" stroke-width="1"/>`;
-    });
-  }
-  svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
-  svg.setAttribute("preserveAspectRatio","xMidYMid slice");
-  svg.innerHTML = out;
-}
-const hex = h => [1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
-mosaico("m-hero",["#ff7a5c","#ffb37a","#2fa8a0","#1f2347"].map(hex),16,9,7);
-mosaico("m-cont",["#2fa8a0","#1f2347","#14173a"].map(hex),16,9,3);
-
-/* Gema low poly para fichas sin imagen */
+/* Emblema sutil para fichas sin imagen */
 const GEMA = `<svg class="gema" viewBox="0 0 100 100" aria-hidden="true">
-<polygon points="50,6 86,34 50,94" fill="#8fe3c8"/><polygon points="50,6 14,34 50,94" fill="#2fa8a0"/>
-<polygon points="14,34 50,34 50,94" fill="#25857f"/><polygon points="86,34 50,34 50,6" fill="#c9f5e6"/>
-<polygon points="14,34 50,34 50,6" fill="#6fd1b6"/></svg>`;
+<polygon points="50,8 84,35 50,92" fill="#a78bfa"/><polygon points="50,8 16,35 50,92" fill="#6366f1"/>
+<polygon points="16,35 50,35 50,92" fill="#4338ca"/><polygon points="84,35 50,35 50,8" fill="#ddd6fe"/>
+<polygon points="16,35 50,35 50,8" fill="#818cf8"/></svg>`;
 
 /* Fichas de juegos */
 const listaJuegos = document.getElementById("lista-juegos");
@@ -278,8 +254,7 @@ JUEGOS.forEach((g, i) => {
     ? `<a class="btn btn-sm btn-outline" href="${g.github}" target="_blank" rel="noopener">GitHub</a>`
     : "";
   c.innerHTML = `
-    <button class="thumb${g.img ? "" : " sin-visor"}" data-tipo="juego" data-i="${i}" aria-label="${g.img ? `Ver portada de ${g.nombre} en grande` : `${g.nombre} en desarrollo`}">
-      <svg class="mosaico" id="mj${i}" aria-hidden="true"></svg>
+    <button class="thumb${g.img ? "" : " sin-visor"}${g.wip ? " wip-bg" : ""}" data-tipo="juego" data-i="${i}" aria-label="${g.img ? `Ver portada de ${g.nombre} en grande` : `${g.nombre} en desarrollo`}">
       <span class="badge-corner${g.wip ? " wip" : ""}">${g.etiqueta}</span>
       ${thumbInner}
     </button>
@@ -295,10 +270,6 @@ JUEGOS.forEach((g, i) => {
       </div>
     </div>`;
   listaJuegos.appendChild(c);
-  const paleta = g.wip
-    ? ["#f28c28","#ff7a5c","#2fa8a0","#1f2347"]
-    : ["#2fa8a0","#1f2347","#14173a"];
-  mosaico("mj"+i, paleta.map(hex), 6, 5, 23+i*7);
 });
 
 /* Fichas de modelos 3D */
@@ -308,7 +279,6 @@ MODELOS.forEach((m, i) => {
   c.className = "card";
   c.innerHTML = `
     <button class="thumb" data-tipo="modelo" data-i="${i}" aria-label="Ver ${m.nombre} en grande">
-      <svg class="mosaico" id="mm${i}" aria-hidden="true"></svg>
       ${m.img ? `<img src="${m.img}" alt="Modelo 3D: ${m.nombre}">` : GEMA}
     </button>
     <div class="info">
@@ -317,7 +287,6 @@ MODELOS.forEach((m, i) => {
       <p>${m.desc}</p>
     </div>`;
   listaModelos.appendChild(c);
-  mosaico("mm"+i, ["#2fa8a0","#1f2347","#14173a"].map(hex), 6, 5, 11+i*5);
 });
 
 /* Visor de imágenes */
